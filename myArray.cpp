@@ -102,6 +102,7 @@ MyArray& MyArray::operator=(const MyArray& other)
         return *this;
     }
     int* newElements = new int[other.m_length];
+    delete[] m_elements;
     m_elements = newElements;
     m_size = other.m_length;
     memcpy(m_elements, other.m_elements, other.m_length * sizeof(int));
